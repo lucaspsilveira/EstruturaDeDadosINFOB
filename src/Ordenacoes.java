@@ -14,7 +14,7 @@ public class Ordenacoes {
 		int[] vetorSelection = new int[tamanho];	// cria o vetor no tamanho escolhido pelo usuário
 		if (escolha == 1) { // caso seja o inteiro 1 o programa preenche o vetor
 			for (int i = 0; i < vetorSelection.length; i++) { // laço de repetição para percorrer o vetor
-				vetorSelection[i] = (int)(Math.random() * 1000); // gera um número aleatório entre 0 e 999 para ser preenchido na posição I
+				vetorSelection[i] = (int)(Math.random() * 2000); // gera um número aleatório entre 0 e 999 para ser preenchido na posição I
 			}
 		} else { // caso seja diferente do inteiro 1 realiza a leitura dos dados em cada posição do vetor
 			for (int i = 0; i < vetorSelection.length; i++) { // laço de repetição para percorrer o vetor
@@ -38,17 +38,28 @@ public class Ordenacoes {
 		for	(int num : vetorBubble) { // for para percorrer o vetor ordenado
 			System.out.print(num+ "; "); // mostra todos os valores concatenando-os
 		}
-		met.bubbleSortParaInt(vetorSelection); // chama o método para ordenar o vetor através do método SelectionSort, passando o vetor por parâmetro
+		met.selectionSort(vetorSelection); // chama o método para ordenar o vetor através do método SelectionSort, passando o vetor por parâmetro
 		
 		System.out.println("\nVetor Ordenado pelo Selection");// Informa o tipo de método utilizado para ordenação
 		for	(int num : vetorSelection) { // for para percorrer o vetor ordenado
 			System.out.print(num+ "; "); // mostra todos os valores concatenando-os
 		}
-		met.bubbleSortParaInt(vetorInsertion); // chama o método para ordenar o vetor através do método InsertionSort, passando o vetor por parâmetro
+		met.insertionSort(vetorInsertion); // chama o método para ordenar o vetor através do método InsertionSort, passando o vetor por parâmetro
 		System.out.println("\nVetor Ordenado pelo InsertionSort"); // Informa o tipo de método utilizado para ordenação
 		for	(int num : vetorInsertion) { // for para percorrer o vetor ordenado
 			System.out.print(num+ "; "); // mostra todos os valores concatenando-os
 		}
 		
+		
+		double norma = 0;
+		for (int num : vetorSelection) {
+			norma += Math.pow(num, 2);
+		}
+		System.out.println();
+		System.out.println("Norma do vetor: "+ Math.sqrt(norma));
+		
+		if (norma == 0) {
+			System.out.println("é Ortogonal");
+		}
 	}
 }

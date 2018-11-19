@@ -1,7 +1,7 @@
 
 public class Metodos {
 	
-	public static void bubbleSortParaInt(int [] v){     // método recebe um vetor de inteiros por parâmetros
+	public void bubbleSortParaInt(int [] v){     // método recebe um vetor de inteiros por parâmetros
         for(int i=0; i<v.length; i++){ // controla a quantidade de vezes que passa no vetor e serve para controlar o quanto deverá ser diminuído no while abaixo
             boolean troca = false; // variável boolean para controlar quando houve uma troca ou não ao passar pelo vetor fazendo a verificação de maior ou menor
             int j = 0;
@@ -19,7 +19,7 @@ public class Metodos {
         } // fim do primeiro for que percorre o vetor
     }
 	
-	public static void insertionSort(int[] array) // método recebe um vetor de inteiros por parâmetros
+	public void insertionSort(int[] array) // método recebe um vetor de inteiros por parâmetros
     {
            for (int i = 0; i < array.length; i++)  // laço de repetição para percorrer o vetor até o seu final
            {
@@ -28,11 +28,11 @@ public class Metodos {
                    {
                            array[j + 1] = array[j]; // realiza a troca na qual o valor do vetor na posição j + uma posição a frente se torna o valor que é maior
                            array[j] = a; // recebe o valor que é menor que a posição do vetor na posição j, ordenando assim o vetor, deixando os mais baixos para a esquerda e levando os maiores para direita
-                   }         // fim do 2º for              
+                   }         // fim do 2º for      
            }            // fim do 1º for   
    } // fim do método
 	
-	 public static void selectionSort(int[] array) {  // método recebe um vetor de inteiros por parâmetros
+	 public void selectionSort(int[] array) {  // método recebe um vetor de inteiros por parâmetros
 		  for (int fixo = 0; fixo < array.length - 1; fixo++) { // laço de repetição para percorrer todo o vetor, a cada interação é definido o seu menor valor e é fizado ele ali
 		    int menor = fixo; // define o menor valor com ma sua posição da interação
 		   
@@ -45,6 +45,8 @@ public class Metodos {
 		      int t = array[fixo]; // variável auxiliar para armazenar o valor e não perde-lo durante a troca
 		      array[fixo] = array[menor]; // faz com o que a posição definida como menor receba realmente o menor valor daquela interação testada
 		      array[menor] = t; // faz com que o valor que não era o menor, trocar com a posição do valor que foi colocado na posição de menor
+		      
+		      
 		    } // fim do if
 		  } // fim do perimeiro for, fim da interação, assim é setado o menor valor e ele não é mais testado
 		} // fim do método
